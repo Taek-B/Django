@@ -28,5 +28,8 @@ urlpatterns = [
     path('detail/<int:board_idx>', views.detail),
     path('update_form/<int:board_idx>', views.update_form),
     path('update/', views.update),
-    path('delete/<int:board_idx>', views.delete)
+    path('delete/<int:board_idx>', views.delete),
+    path('download_count/', views.download_count),
+    path('download/', views.download),
+    path('comment_insert/', views.comment_insert)
 ]

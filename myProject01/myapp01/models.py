@@ -19,5 +19,14 @@ class Board(models.Model):
     def hit_up(self):
         self.hit += 1
 
-    def hit_down(self):
+    def down_up(self):
         self.down += 1
+
+
+class Comment(models.Model):
+    idx = models.AutoField(primary_key=True)
+    # board_idx를 외래키로 사용할 예정
+    board_idx = models.IntegerField(null=False)
+    writer = models.CharField(null=False, max_length=50)
+    content = models.TextField(null=False)
+    post_date = models.DateTimeField(default=datetime.now, blank=True)

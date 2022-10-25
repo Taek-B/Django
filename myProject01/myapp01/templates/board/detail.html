@@ -21,6 +21,21 @@
     <br />
     <a href="/update_form/{{dto.idx}}">수정</a>
     <a href="/delete/{{dto.idx}}">삭제</a>
+
+    <br><br>
+    <h4>Comment</h4>
+    <form action="/comment_insert/" method="post">
+        <input type="hidden" name="idx" value="{{dto.idx}}" />
+        <textarea name="content" rows="5" cols="50" placeholder="Comment Insert"></textarea>
+        <input type="submit" value="전송" />
+    </form>
+    <br>
+
+    <!-- 글쓴이 / 작성일자 / 내용 -->
+    {% for row in commentList %}
+    {{row.writer}} // {{row.post_date | date:"Y-m-d"}} // {{row.content}} <br>
+    {% endfor %}
+
 </body>
 
 </html>
